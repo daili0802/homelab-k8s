@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-shell
+spec:
+  containers:
+  - name: ubuntu-shell
+    image: ubuntu
+    command: ["bash", "-c", "sleep 3600"]
