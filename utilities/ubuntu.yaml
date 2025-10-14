@@ -6,4 +6,5 @@ spec:
   containers:
   - name: ubuntu-shell
     image: ubuntu
-    command: ["bash", "-c", "sleep 3600"]
+    command: ["bash", "-c", "--"]
+    args: [ "while true; do sleep 30; done;" ]
