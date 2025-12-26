@@ -1,0 +1,35 @@
+# MetalLB Configuration
+# Version: v0.15.3
+
+# Controller configuration
+controller:
+  # Enable controller
+  enabled: true
+  
+  # Resource limits
+  resources:
+    limits:
+      cpu: 100m
+      memory: 100Mi
+
+# Speaker configuration
+speaker:
+  # Enable speaker
+  enabled: true
+  
+  # Resource limits
+  resources:
+    limits:
+      cpu: 100m
+      memory: 100Mi
+  
+  # Tolerations to run on all nodes including control plane
+  tolerations:
+  - key: node-role.kubernetes.io/control-plane
+    operator: Exists
+    effect: NoSchedule
+
+# Prometheus metrics
+prometheus:
+  # Disable if not using Prometheus
+  scrapeAnnotations: false
